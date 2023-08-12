@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<title>Frontend Mentor | Intro component with sign up form</title>
+
+	<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+	<style>
+        :root{
+            --poppins: 'Poppins', sans-serif;
+            --red: hsl(0, 100%, 74%);
+            --green: hsl(154, 59%, 51%);
+            --blue: hsl(248, 32%, 49%);
+            --dark-blue: hsl(249, 10%, 26%); 
+            --grayish-blue: hsl(246, 25%, 77%);
+        }
+        html{
+			box-sizing: border-box; 
+			}   
+		body,html{
+			min-height: 100%;
+		} 
+		body{ 
+			font-family: var(--poppins);
+			background-image: url('./images/bg-intro-mobile.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-color: var(--red);
+			justify-content: flex-end;
+		}         
+		
+        *,*::before,*::after{
+			text-align: center;
+			box-sizing: inherit;
+			margin: 0;
+			padding: 0;
+		}
+        .container{
+            width: 90%;
+            margin: 95px auto 80px;
+        }
+        .title{
+            color: #fff;
+            font-size: 28px;
+        }
+        .text{
+            color: #fff;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 500px;
+            padding: 20px 0;
+            line-height: 1.69;
+            font-size: 17px;
+        }
+        .offer{
+            box-shadow: 0px 8px 0px 0px 
+            hsla(248, 32%, 49%, 0.308);
+            background-color: var(--blue);
+            padding: 24px 50px;
+            height: 95px;
+            margin: 0 auto;
+            margin-top: 45px;
+            font-weight: 600;
+            line-height: 1.7;
+            color: #ffffff;
+            border-radius: 10px;
+            max-width: 500px;
+        }
+        .font-light{
+            color: #ffffffdc;
+            font-weight: 200;
+        }
+        .form{
+            margin: 0 auto;
+            margin-top: 25px;
+            background-color: #fff;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            border-radius: 10px;
+            max-width: 500px;
+            box-shadow: 0px 8px 0px 0px 
+            hsla(249, 10%, 26%, 0.26); 
+        }
+        .hidden{
+             display: none; 
+        }
+        .inputs-container{
+            padding: 17px ;
+            border: 1px solid #dddada;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-radius: 6px;
+        }
+       
+        .input{
+            outline: none;
+            font-family: var(--poppins);
+            font-size: 15px;
+            font-weight: 700;
+            border: none;
+            text-align: left;
+            width: 70%;
+        }
+        .btn{
+            cursor: pointer;
+            color: #fff;
+            text-transform: uppercase;
+            padding: 22px 0;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 5px;
+            background-color: var(--green);
+        }
+        .terms{
+            font-size: 13px;
+            color: var(--grayish-blue);
+        }
+        
+        .link{
+            color: var(--red);
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .alert{
+            color: var(--red);
+            font-style: oblique;
+            text-align: right;
+            font-size: 13px;
+            padding-right: 5px;
+            margin-bottom: 6px;
+        }
+        
+        .error{
+            border: 3px solid var(--red);                
+        }
+        .error input::placeholder{
+            color: var(--red);
+        }
+        @media (min-width: 376px) {
+            body{
+                background-image: url('./images/bg-intro-desktop.png');
+            }
+            .inputs-container{
+                padding: 18px 30px;
+            }
+            .input{        
+                width: 90%;
+            }
+        }
+        @media (min-width: 1128px) {
+           
+            .inputs-container{
+                padding: 18px 40px;
+            }
+            .container{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+                margin: 0 auto;
+                min-height: 100vh;
+            }
+            .form{
+                padding: 45px;
+                max-width: 650px;
+                gap: 11px;
+            }
+            .text{
+                text-align: left;
+                max-width: 530px;
+                margin: 0;
+            }
+            .title{
+                text-align: left;
+                font-size: 40px;
+                max-width: 500px;
+            }          
+            .offer{
+                margin: 0 auto;
+                max-width: 650px;
+                padding:  20px;
+                height: auto;
+            }
+        }
+	</style>
+</head>
+<body>
+    <main class="container">
+        <div class="grid-1">
+            <h1 class="title">
+                Learn to code by watching others
+            </h1>
+            <p class="text">
+                See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable. 
+            </p>
+        </div>
+        <div class="grid-2">
+            <p class="offer">
+                Try it free 7 days 
+                <span class="font-light">
+                    then $20/mo. thereafter
+                </span>
+            </p>
+            <form class="form" action="" novalidate>
+                <div class="first-name-container inputs-container">
+                    <input placeholder="First Name" class="input" type="text" id="firtsName">
+                    <img class="icon-error firtsName-error hidden" src="./images/icon-error.svg" alt="icon-error">  
+                </div>                
+                <p class="alert hidden firtsName-error">
+                    Firts Name cannot be empty
+                </p>
+
+                <div class="last-name-container inputs-container ">
+                    <input placeholder="Last Name" class="input" type="text" id="lastName">
+                    <img class="icon-error lastName-error hidden" src="./images/icon-error.svg" alt="icon-error">  
+                </div>
+                <p class="alert hidden lastName-error">
+                    Last Name cannot be empty
+                </p>                
+                <div class="email-container inputs-container">
+                    <input placeholder="Email Address" class="input" type="email" id="email">
+                    <img src="./images/icon-error.svg" class="icon-error email-error hidden" alt="icon-error">
+                </div>
+                    <p class="alert hidden email-error">
+                        Looks like this is not an email
+                    </p>   
+                <div class="password-container inputs-container">
+                    <input placeholder="Password" class="input" type="password" id="password">       
+                    <img class="icon-error password-error hidden" src="./images/icon-error.svg" alt="icon-error">             
+                </div>
+                <p class="alert hidden password-error">
+                    Password cannot be empty
+                </p>
+                
+                <input class="btn" type="submit" value="claim your free trial">
+                <p class="terms ">
+                    By clicking the button, you are agreeing to our 
+                    <a class="link" href="#">Terms and Services</a>
+                </p>
+            </form>
+        </div>        
+    </main>
+</body>
+    <script>
+        const form = document.querySelector('.form');
+        form.addEventListener('submit',(e) => {
+            e.preventDefault();
+            const firtsName = document.getElementById('firtsName');
+            const lastName = document.getElementById('lastName');
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+            if(firtsName.value === ''){
+                errorFunction(firtsName,'First Name','');               
+            }
+            if(lastName.value === ''){
+                errorFunction(lastName,'Last Name','');               
+            }
+            if(!validarEmail(email.value)){
+                email.value = ''
+                errorFunction(email,'Email Address','email@example/com');     
+            }
+            if(password.value === ''){
+                errorFunction(password,'Password','');               
+            }
+        });
+        const errorFunction = (element,placeholderAnt,placeholderNew) =>{
+            element.parentElement.classList.add('error');
+            element.placeholder = placeholderNew;
+            setTimeout(() => {
+                element.placeholder = placeholderAnt;
+                element.parentElement.classList.remove('error');
+            }, 3000);
+            document.querySelectorAll(`.${element.id}-error`).forEach(error => {
+                error.classList.remove('hidden');
+                setTimeout(() => {
+                    error.classList.add('hidden');
+                }, 3500);
+            });
+        }
+        function validarEmail(email) {
+			var patron = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+			return patron.test(email);
+		}
+
+          
+    </script>
+</html>
